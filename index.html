@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&amp;family=Playwrite+IT+Moderna:wght@100..400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- font -->
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="./CSS/all.min.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+  <body>
+    <nav class="navbar px-5">
+      <div class="container-fluid">
+        <h1 class="navbar-brand text-light m-auto" href="#">Bookmarker</h1>
+      </div>
+    </nav>
+
+    <main>
+      <div class="navs mt-5">
+        <ul class="nav nav-pills mb-3 justify-content-center d-flex">
+          <li class="mx-3 p-2">
+            <button class="btn-nav button-77 add" role="button">Add</button>
+          </li>
+          <li class="p-2">
+            <button class="btn-nav button-78 show" role="button">Show</button>
+          </li>
+        </ul>
+      </div>
+
+      <section id="add" class="pt-5">
+        <div class="container card mb-5">
+          <div class="row my-5 mx-auto">
+            <!-- start heading -->
+            <div class="mb-5 text-center">
+              <h2 class="fw-bolder head">Welcome in Bookmarking</h2>
+            </div>
+            <!-- end heading -->
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control border-0 border-bottom"
+                id="BookmarkName"
+                placeholder="Bookmark Name"
+              />
+              <label for="BookmarkName"
+                >Bookmark Name <span class="fa-solid fa-book"></span
+              ></label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input
+                type="url"
+                class="form-control border-0 border-bottom"
+                id="WebsiteURL"
+                placeholder="Website URL"
+              />
+              <label for="WebsiteURL"
+                >Website URL <span class="fa-solid fa-link"></span
+              ></label>
+            </div>
+            <div class="text-center">
+              <button
+                type="button"
+                class="btn btn-outline-light"
+                onclick="addBookmark()"
+              >
+                <span class="fa-solid fa-archive"></span> Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="show" class="pt-5">
+        <div class="container-fluid card mb-5">
+          <div class="row my-5">
+            <!-- start heading -->
+            <div class="text-center">
+              <h2 class="fw-bolder head">Your Bookmarks</h2>
+            </div>
+
+            <!-- end heading -->
+            <div class="row m-auto gy-5" id="bookmarkSercher">
+              <div class="col-11">
+                <input
+                  type="text"
+                  class="form-control form-control-lg border-0 border-bottom"
+                  id="searchInput"
+                  placeholder="Search..."
+                  oninput="searchByName(this.value)"
+                />
+              </div>
+
+              <div class="col-1 d-flex justify-content-center">
+                <button
+                  type="button"
+                  class="btn btn-outline-light"
+                  onclick="clearAll()"
+                >
+                  <span class="fa-solid fa-trash"></span>
+                </button>
+              </div>
+            </div>
+            <div class="row mx-auto gy-4" id="bookmarksList"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
