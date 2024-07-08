@@ -24,7 +24,7 @@ function addBookmark() {
     clearBookmark();
   } else {
     alert(
-      "Invalid input. Bookmark name must be alphanumeric and start with a Lowercase letter..."
+      "Invalid input. Bookmark name must be alphanumeric and start with a Uppercase letter..."
     );
   }
 }
